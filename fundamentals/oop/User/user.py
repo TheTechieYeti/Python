@@ -7,24 +7,25 @@ class User:
 
     def make_deposit(self, amt):
         self.account_balance += amt
+        return self
+    
     def make_withdrawal(self, amt):
         self.account_balance -= amt
+        return self
+
     def disp_user_balance(self):
-        print(self.account_balance) #should have done an f statement 
-        #to print username and balance
+        print(f"User: {self.name.capitalize()}, Balance: {self.account_balance}")
+        return self
+    
     def transfer(self, other, amt):
         self.account_balance -= amt
         other.account_balance += amt
+        return self
 
 rosencrantz = User("rosencrantz", "rc@rc.com")
 guilderstern = User("guilderstern", "gs@gs.com")
 joe = User("joe", "joe@joe.com")
         
-joe.make_deposit(200)
-        
-joe.disp_user_balance()
-joe.make_deposit(300)
-joe.disp_user_balance()
-joe.transfer(rosencrantz, 45)
-print(joe.account_balance)
-print(rosencrantz.account_balance)
+rosencrantz.make_deposit(400).make_deposit(50).make_withdrawal(350).disp_user_balance()
+guilderstern.make_deposit(300).transfer(joe, 47).disp_user_balance()
+joe.make_deposit(50000).make_deposit(30).disp_user_balance()
