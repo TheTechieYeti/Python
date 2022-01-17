@@ -10,7 +10,8 @@ class User:
     def make_withdrawal(self, amt):
         self.account_balance -= amt
     def disp_user_balance(self):
-        print(self.account_balance)
+        print(self.account_balance) #should have done an f statement 
+        #to print username and balance
     def transfer(self, other, amt):
         self.account_balance -= amt
         other.account_balance += amt
