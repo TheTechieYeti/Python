@@ -1,0 +1,2 @@
+import parent
+print(locals())
