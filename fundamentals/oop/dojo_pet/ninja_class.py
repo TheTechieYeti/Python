@@ -35,9 +35,9 @@ class Ninja:
 # brutus = Pet('Brutus', 'St. Bernard', ['sit', 'fetch', 'play dead'], 80, 50)
 scott = Ninja('Scott', 'Elliott', 'biscuits', 'kibble', pet_class.Pet('Brutus', 'St. Bernard', ['sit', 'fetch', 'play dead'], 80, 100))
 
-katie = Ninja('Katie', 'Elliott', 'cat-nip', 'friskys', pet_class.Pet('Sophie', 'Unknown', 80, 100))
+katie = Ninja('Katie', 'Elliott', 'cat-nip', 'friskys', pet_class.Pet_cat('Sophie', 'Unknown', 80, 100, ))
 
 # scott.feed().bathe().sleep()
 # katie.feed().bathe().sleep()
 print(scott.pet.name)
-print(katie.pet.spayed)
+print(katie.pet.spay)

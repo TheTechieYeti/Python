@@ -35,6 +35,7 @@ class Pet:
         return attributes_statement
 
 class Pet_cat(Pet):
-    def __init__(self, name, type, health=100, energy=100, spayed = False):
-        super().__init__(name, type, health, energy, spayed)
-        self.spayed = spayed
+    def __init__(self, name, type, health=100, energy=100, spay=True):
+        super().__init__(name, type, health, energy, spay)
+        self.spay = spay
+    
