@@ -1,5 +1,5 @@
 class Pet:
-    def __init__(self, name, type, tricks, health = 100, energy = 100):
+    def __init__(self, name, type, tricks = [], health = 100, energy = 100):
         self.name = name
         self.type = type
         self.tricks = tricks
@@ -20,6 +20,15 @@ class Pet:
         self.pet.energy += 5
         self.pet.health += 10
         return self
+        
+    def trick(self, command):
+        if self.tricks:
+            for i in range(len(self.tricks)):
+                if command == i:
+                    print(f'{self.name} performed {self.tricks[i]}!')
+
+        else:
+            print(f'{self.name} does not know this trick.')
 
     def play(self,):
         self.pet.health += 5

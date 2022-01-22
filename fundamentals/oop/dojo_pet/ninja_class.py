@@ -1,7 +1,7 @@
 ### Things I still want to do in this file. 
     #1) Have the owner make the pet perform a trick and access it from the tricks list in pet attributes and give him a treat
-    #2) Have the owner teach the pet a new trick and import that trick into the pets attributes 
 
+from pickle import APPENDS
 import pet_class
 class Ninja:
     def __init__(self, first_name, last_name, treats, pet_food, pet):
@@ -31,6 +31,23 @@ class Ninja:
         pet_class.Pet.sleep(self)
         print(pet_class.Pet.attributes(self))
 
+    def trick(self, command):
+        self.pet.trick(command) 
+        return self
+
+    def teach_trick(self, new_trick):
+        for i in range(len(self.pet.tricks)):
+            length = (len(self.pet.tricks))
+            if new_trick == self.pet.tricks[i]:
+                print(f"{self.pet.name} already knows this trick! Would you like to teach a different one?")
+                return self
+            else:
+                self.pet.tricks.append(new_trick)
+                length += 1
+                print(f"{self.pet.name} learned {new_trick}. {self.pet.name} now knows {length} tricks!")
+                return self
+
+
 
 # brutus = Pet('Brutus', 'St. Bernard', ['sit', 'fetch', 'play dead'], 80, 50)
 scott = Ninja('Scott', 'Elliott', 'biscuits', 'kibble', pet_class.Pet('Brutus', 'St. Bernard', ['sit', 'fetch', 'play dead'], 80, 100))
@@ -39,5 +56,6 @@ katie = Ninja('Katie', 'Elliott', 'cat-nip', 'friskys', pet_class.Pet_cat('Sophi
 
 # scott.feed().bathe().sleep()
 # katie.feed().bathe().sleep()
+scott.trick(0).teach_trick("Shake hands").teach_trick('sit')
 print(scott.pet.name)
 print(katie.pet.spay)
