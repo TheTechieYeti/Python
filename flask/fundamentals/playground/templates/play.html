@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Position Practice</title>
+<style>
+    .container{
+    width: 1000px;
+    margin: 10px auto;
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.top-nav {
+    height: 150px;
+    margin: 0px 0px 15px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 800px;
+}
+.side-nav, .main {
+    display: inline-block;
+    vertical-align: top;
+    width: 950px;
+    padding-left: 10px;
+    margin-right: 13px;
+}
+
+.sub-content {
+    height: 200px;
+    width: 210px;
+    background-color:  blue;
+}
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-nav">
+            <h1>Welcome!</h1>
+        </div>
+    </div>
+    <div class='container'>
+        {% for num in range(0,num) %}
+            <div class="sub-content" style="background-color: {{color}};"></div>
+        {% endfor %}
+
+    </div>
+</body>
+</html>
+
