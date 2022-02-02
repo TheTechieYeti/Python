@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Standard Checkerboard </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+</head>
+<body>
+    <div class = container> 
+        {% for i in range(rows)%} <!-- iterates through the number of rows -->
+            {% if i%2 == 0%}<!-- for loop that alternates between rows starting with black and rows starting with red -->
+            <div class = row>
+                <div class = redbox></div>
+                <div class = blackbox></div>
+                <div class = redbox></div>
+                <div class = blackbox></div>
+                <div class = redbox></div>
+                <div class = blackbox></div>
+                <div class = redbox></div>
+                <div class = blackbox></div>
+            </div>
+            {% else %}
+            <div class = row>
+                <div class = blackbox></div>
+                <div class = redbox></div>
+                <div class = blackbox></div>
+                <div class = redbox></div>
+                <div class = blackbox></div>
+                <div class = redbox></div>
+                <div class = blackbox></div>
+                <div class = redbox></div>
+            </div>
+            {%endif%}
+        {% endfor%}
+            
+        
+        
+    </div>
+</body>
+</html>

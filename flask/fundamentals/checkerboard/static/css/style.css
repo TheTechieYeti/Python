@@ -1,0 +1,33 @@
+*{
+    padding: 0;
+    margin:  0;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+.container{
+    display: inline-flex;
+    flex-direction: column;
+    height: fit-content;
+    width: fit-content;
+    padding: 20% 50%;
+}
+.row{
+    display: inline-flex;
+    width: fit-content;
+}
+
+.redbox{
+    background-color: red;
+    height: 40px;
+    width: 40px;
+}
+
+.blackbox{
+    background-color: black;
+    height: 40px;
+    width: 40px;
+}
+.box{
+    height: 40px;
+    width: 40px;
+}

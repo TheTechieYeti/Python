@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Standard Checkerboard </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+</head>
+<body>
+    <div class = container> 
+        {% for i in range(rows) %} <!-- iterates through the number of rows -->
+            <div class = row>
+                {% if i%2 == 0 %}
+                    {% for j in range(cols) %}<!-- iterates through cols to populates columns -->
+                        {% if j%2 == 0 %}<!-- alternates between black and white based on odd/even -->
+                            <div class = redbox></div>
+                        {% elif j%2 !=0 %}
+                            <div class = blackbox></div>
+                        {%endif%}
+                    {% endfor %}
+                {%elif i%2 != 0 %}
+                {% for j in range(cols) %}<!-- iterates through cols to populates columns -->
+                {% if j%2 == 0 %}<!-- alternates between black and white based on odd/even -->
+                    <div class = blackbox></div>
+                {% elif j%2 !=0 %}
+                    <div class = redbox></div>
+                {%endif%}
+            {% endfor %}
+
+                {%endif%}
+            </div>
+        {% endfor %}
+            
+        
+        
+    </div>
+</body>
+</html>
