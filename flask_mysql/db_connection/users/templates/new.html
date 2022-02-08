@@ -12,24 +12,26 @@
         <div>
             <h1>Add New User</h1>
             <ph></ph>
-            <p><a href='/'>Go Home</a></p>
+            <p><a href='/users'>Go Home</a></p>
         </div>
-        <div><Form action="/process" method="POST">
-            <div>
-                <label for="fname" class = "visually-hidden form-label"></label>
-                <input type="text" name="fname" placeholder="First Name" class="form-text">
-            </div>
-            <div>
-                <label for="lname" class = "visually-hidden form-label"></label>
-                <input type="text" name="lname" class="form-text" placeholder="Last Name">
-            </div>
-            <div>
-                <label for="email" class = "visually-hidden form-label"></label>
-                <input type="text" name="email" class="form-text" placeholder="Email">
-            </div>
-            <div><input type="submit" value="Add Friend" class="but-primary"></div>
+        <div>
+            <Form action="/users/new/process" method="POST">
+                <div>
+                    <label for="fname" class = "visually-hidden form-label"></label>
+                    <input type="text" name="fname" placeholder="First Name" class="form-text">
+                </div>
+                <div>
+                    <label for="lname" class = "visually-hidden form-label"></label>
+                    <input type="text" name="lname" class="form-text" placeholder="Last Name">
+                </div>
+                <div>
+                    <label for="email" class = "visually-hidden form-label"></label>
+                    <input type="text" name="email" class="form-text" placeholder="Email">
+                </div>
+                <div><input type="submit" value="Add Friend" class="btn-primary"></div>
 
-        </Form></div>
+            </Form>
+        </div>
     </div>
 </body>
 </html>

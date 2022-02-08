@@ -10,22 +10,25 @@
 <body>
 <div class="container">
     <h1>All Users</h1>
-    <p><a href="'/">Go Home</a></p>
     <table class="mb-3 border">
         <th>ID</th>
         <th>Full Name</th>
         <th>Email</th>
-        <th>Created At</th>   
+        <th>Created At</th>
+        <th>Actions</th>   
         {% for one_user in users %}  
         <tr>
             <td>{{one_user.id}}</td>
             <td>{{one_user.first_name}} {{one_user.last_name}}</td>
             <td>{{one_user.email}}</td>
             <td>{{one_user.created_at}}</td>
+            <td><a href="/users/{{one_user.id}}">Show</a>|<a href="/users/{{one_user.id}}/edit">Edit|</a><a href="/users/{{one_user.id}}/delete">Delete</a>
+            </td>
+           
         </tr>
         {% endfor %}
     </table>
-    <a href="/new" class="btn btn-primary">Add a New User</a>
+    <a href="/users/new" class="btn btn-primary">Add a New User</a>
 </div>
 </body>
 </html>
