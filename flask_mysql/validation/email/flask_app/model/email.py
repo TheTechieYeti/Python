@@ -9,8 +9,11 @@ class Email:
         self.email = data["email"]
         self.created_at = data["created_at"]
         self.updated_at = data["updated_at"]
-    # def time_format(self):
-    #     self.updated_at = datetime.strftime(self.updated_at, "%-m/%-d/%Y %-I %p")
+    
+    def time_format(self):
+        return self.updated_at.strftime("%m/%d/%Y  %I:%M-%p")
+
+# self.updated_at = self.updated_at.strftime("%-m/%-d/%Y %-I %p")
 
     @classmethod
     def create(cls, data):

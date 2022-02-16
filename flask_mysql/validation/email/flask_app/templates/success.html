@@ -28,7 +28,7 @@
           {% for email in emails %}
           <tr>
             <th>{{email.email}}</th>
-            <th>{{email.created_at}}   <a href="/destroy/{{email.id}}" value = "{{email.id}}">Delete Email</a></th>
+            <th>{{email.time_format()}}   <a href="/destroy/{{email.id}}" value = "{{email.id}}">Delete Email</a></th>
           </tr>
           {% endfor %}
         </tbody>
