@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email and Password</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-5 mb-5">
+        <div class="row d-flex align-items-center justify-content-around">
+            <div class="col-md-4">
+                {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+                    {% if messages %}                            <!-- check if there are any messages -->
+                        {% for message in messages %}            <!-- loop through the messages -->
+                            <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                <div class="card px-5 py-5"> <span class="circle"><i class="fa fa-check"></i></span>
+                        <form action="/register" method = "POST">
+                            <h3 class="mt-3 mb-2">Register</h3>
+                            <input type="hidden" name="which_form" value="register">
+                            <div class="form-input mb-2"> <i class="fa fa-user"></i> <input type="text" class="form-control" placeholder="First Name" name="first_name"> </div>
+                            <div class="form-input mb-2"> <i class="fa fa-user"></i> <input type="text" class="form-control" placeholder="Last Name" name="last_name"> </div>
+                            <div class="form-input mb-2"> <i class="fa fa-envelope"></i> <input type="text" class="form-control" placeholder="Email address" name="email"> </div>
+                            <div class="form-input mb-2"> <i class="fa fa-lock"></i> <input type="text" class="form-control" placeholder="Password" name="password"> </div>
+                            <div class="form-input mb-2"> <i class="fa fa-lock"></i> <input type="text" class="form-control" placeholder="Confirm Password" name="confirm_password"> </div>
+                            <div class='row d-flex align-items-center justify-content-center m-3'> <input type="submit" class="btn-primary"></div>
+                        </form>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card px-5 py-5"> <span class="circle"><i class="fa fa-check"></i></span>
+                    <form action="/login" method="POST">                    
+                        <h3 class="mt-3">Login</h3> 
+                        <input type="hidden" name="which_form" value="register">
+                        <div class="form-input mt-3"> <i class="fa fa-envelope"></i> <input type="text" class="form-control" placeholder="Email address" name="email"> </div>
+                        <div class="form-input mt-3"> <i class="fa fa-lock"></i> <input type="text" class="form-control" placeholder="password" name="password"> </div>
+                        <div class='row d-flex align-items-center justify-content-center m-3'> <input type="submit" class="btn-primary" value="Login"></div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
