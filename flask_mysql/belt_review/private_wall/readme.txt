@@ -1,0 +1,1 @@
+There are a few notes I wanted to make here for future reference/education. There is a time_span function in message.py that i took from the solution page. I wanted to it for future reference. I understood conceptually how to accomplish the purpose this function accomplishes, but I had no idea of how to execute it. 

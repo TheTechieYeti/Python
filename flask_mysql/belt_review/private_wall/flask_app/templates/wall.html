@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Wall Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="row" id="nav_bar">
+        <div class="col"><h1>CodingDojo Wall</h1></div>
+        <div class="col .d-flex flow"><h2>Welcome, {{user.first_name}}</h2> <a href="/logout">Log Out</a></div>
+    </div>
+    <div class="row" id="main_body">
+        <div class="col-6">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">{{num_messages}} Messges for You</th>
+                        <th scope="col">Delete * Change text to white</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        {% for message in messages %}
+                        <tr>
+                            <td scope="row">
+                                <div>{{message.user.first_name}} said (timemethod):</div>
+                                <div>{{message.content}}</div>
+                            </td>
+                            <td>
+                                <a href="/delete">Image of Trash Can</a>
+                            </td>
+                        </tr>
+                        {% endfor %}  
+                </tbody>
+             </table>
+        </div>
+        <div class="col-6">
+            <div class="row">
+                <h3>Send Messages</h3>
+                <p>You have sent {{12}} messages so far</p>
+            </div>
+            {% for receiver in users %}        
+                <div class="row"></div>
+                <form action="/create_message", method = "POST">
+                    <label for="Recipient Name">{{receiver.first_name}} {{receiver.last_name}}</label>
+                    <input type="hidden" value = "{{receiver.id}}" name = "receiver_id">
+                    <input type="hidden" value = "{{user.id}}" name = "user_id">
+                    <input type="text" name = "content">
+                    <input type="submit" value = "Send">
+                    </form>
+            {% endfor %}
+            </div>
+            <div class="row"></div>
+            <div class="row"></div>
+            <div class="row"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
