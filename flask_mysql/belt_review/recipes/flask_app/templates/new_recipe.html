@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Wall Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="row" id="nav_bar">
+        <div class="col .d-flex flow"><h2>Add New Recipe</h2></div>
+        <div class="col">
+            <div class="row">
+                <div class="col"><a href="/dashboard">Dashboard</a></div>
+                <div class="col"><a href="logout">Log Out</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="main_body">
+        <div class="col-5">
+            <form action="/recipes/new/create", method = "POST">
+                <div class="row">
+                    <div class="col ">
+                        <div><label for="name">Name:</label></div>
+                        <div><input type="text" name="name"></div>
+                        <div><label for="description">Description:</label></div>
+                        <div><input type="text" name="description"></div>
+                        <div><label for="directions">Directions</label></div>
+                        <div><input type="text" name="directions"></div>
+                        <input type="submit" value="Create">
+                    </div>
+                    <div class="col">
+                        <div><label for="made">Date Made On:</label></div>
+                        <div><input type="text" name="made"></div>
+                        <div><label for="madetest">Date Made On Test:</label></div>
+                        <div><input type="date" name="made_test"></div>
+                        <div><label for="under_30">Under 30 Minutes?</label></div>
+                        <input type="radio" id="No" name="under_30" value="0">
+                        <label for="False">No</label><br>
+                        <input type="radio" id="yes" name="under_30" value="1">
+                        <label for="True">Yes</label><br>
+                        </div>
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+        
+    </div>
+</div>
+<script src="flask_app\static\js\script.js"></script>
+</body>
+</html>
