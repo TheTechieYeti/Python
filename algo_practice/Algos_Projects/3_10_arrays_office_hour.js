@@ -24,19 +24,13 @@
 
 
 function get_change(change){    //90
-    var remainder_change = change%25  // remainder_change = 15
-    change = change - remainder_change // change = 75
-    var num_of_quarters = change/25   
-    change = remainder_change   //end of step 1
-    remainder_change = change%10  // remainder_change = 15
-    change = change - remainder_change // change = 75
-    var num_of_dimes = change/10   
-    change = remainder_change     //end of step 2
-    remainder_change = change%5  // remainder_change = 15
-    change = change - remainder_change // change = 75
-    var num_of_nickels = change/5   //end of step 3
-    change = remainder_change
-    var num_of_pennies = change    //end of step 4
+    var modulus_change = change%25  // remainder_change = 15
+    var num_of_quarters = (change-modulus_change)/25  
+    remainder_change = modulus_change%10
+    var num_of_dimes = (modulus_change-remainder_change)/10
+    modulus_change = remainder_change%5
+    var num_of_nickels = (remainder_change-modulus_change)/5
+    var num_of_pennies = modulus_change
     var coins = {
         'quarters': num_of_quarters,
         'dimes' : num_of_dimes,
