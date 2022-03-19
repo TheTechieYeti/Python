@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Event</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap_css/bootstrap.css') }}">
+    <link rel="stylesheet" href="/flask_app/static/css/bootstrap_css/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="/flask_app/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="">
+    <div class="row nav pt-3 pb-3 color-white d-flex" id="nav_bar">
+        <div class="col fs-5 border-end border-5 border-white d-flex justify-content-start ">
+            <div><a href="/dashboard">iSport</a></div>
+        </div>
+        <div class="col fs-5 border-end border-5 border-white d-flex justify-content-center" >
+            <div><a href="/event/new" class="fs-5">New Event</a></div>
+        </div>
+        <div class="col fs-5 border-end border-5 border-white d-flex justify-content-center">
+            <div><a href="/event/search">Search</a></div>
+        </div>
+        <div class="col fs-5 d-flex d-flex justify-content-center">
+            <div class="row">
+                <div class="col-6">
+                    <a href="/user/{{user.id}}">
+                        <img class = "me-3 rounded"height = "40px" src="{{ url_for('static', filename= user.img) }}" alt="User Image">
+                    </a>
+                </div>
+                <div class="col-6">
+                    <a href="/logout"><img class = "me-3 rounded" height = "20px" src="{{ url_for('static', filename= 'images/logout.png') }}" alt="User Image">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+                                {% if messages %}                            <!-- check if there are any messages -->
+                                    {% for message in messages %}            <!-- loop through the messages -->
+                                        <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                                    {% endfor %}
+                                {% endif %}
+                            {% endwith %}
+    <div class="row justify-content-center">
+        <div class="col-8 event_box_wrapper mt-5">
+            <div class="row">
+                <div class="col-2 pe-0 tab_box ">
+                    <div class="row event_box_tab info_tab " id="info_tab" onclick="display_tab('info_tab','.info_box')">Information</div>
+                    <div class="row event_box_tab users_tab " id="users_tab" onclick="display_tab('users_tab','.users_box')">Users</div>
+                    <div class="row event_box_tab location_tab " id="location_tab" onclick="display_tab('location_tab','.location_box')">Location</div>
+                    <div class="row event_box_tab weather_tab " id="weather_tab" onclick="display_tab('weather_tab','.weather_box')">Weather</div>
+                </div>
+                <div class="col-10 event_box">
+                    <div class="box info_box" >
+                        <div class="row">
+                            <div class="col">
+                                <div class="card m-3"style="width: 25rem;" >
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{event.name}}</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">{{event.date}}</h6>
+                                        <h6 class="card-subtitle mb-2 text-muted">{{event.start_time}}</h6>
+                                        <p class="card-text">{{event.information}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row ms-2"><h3>Messages</h3></div>
+                        <div class="row ms-2">
+                            <div class="message border col" >
+                                {% for message in event.messages %}
+                                <p class="word-wrap">{{message.creator.full_name()}} says: {{message.content}}  {{message.updated_at}}</p>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="row border ms-2 mt-1">
+                            <form class = "align-self-end "action="/event/{{event.id}}/new_message " method="POST">
+                                <label for="content">New Message</label>
+                                <input type="text" class="input-lg" style = "width:100%; min-height: 60px;"placeholder="Write your message to the group here" name="content">
+                                <input type="submit" name="" id="">
+                            </form>
+                        </div>
+                            
+
+                    </div>
+                    <div class="box users_box" > 
+                        <div class="card mt-3" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">List of who is participating</h5>
+                                {% for attendee in event.attendees %}
+                                <h6 class="card-subtitle mb-2 text-muted">{{attendee.full_name()}}</h6>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box location_box" >Location</div>
+                    <div class="box weather_box" >Weather</div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="/flask_app/static/js/bootstrap_js/bootstrap.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap_js/bootstrap.js') }}"></script>
+<script src="/flask_app/static/js/script.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>

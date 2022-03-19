@@ -1,0 +1,165 @@
+.red_border{
+    border-style: solid;
+    color: red;
+}
+.green_border{
+    border-style: solid;
+    color: rgb(0, 255, 55);
+}
+.white_background{
+    background-color: whitesmoke;
+}
+*{
+    font-family: 'Roboto', sans-serif;
+}
+.background_grey{
+    background-color: rgb(237, 237, 238)
+}
+/* .temp{
+    height: 500px;
+    width: 400px;
+} */
+/* .tab{
+    height:40px;
+    width: 100px;
+    left: -80px;
+    top: 60px;
+}
+.event_tabs{
+    left: -120px;
+    width: 96px;
+} */
+#logout{
+    top: -15px;
+    height: 30px;
+}
+.message{
+    height: 120px;
+    overflow: auto;
+}
+.box{
+    
+    position: absolute;
+    background-color: white;
+    display: none;
+    width: 75%;
+
+}
+.tab_box{
+    height: 50%;
+    align-content: space-around;
+
+}
+#event_info_tab{
+    height:40px;
+    width: 110px;
+    left: -90px;
+    top: 120px;
+}
+.event_box_wrapper{
+    position: relative;
+}
+.event_box{
+    border: solid;
+    border-color: grey;
+    border-radius: 3%;
+    z-index: 1;
+    height: 500px;
+    background-color: white;
+
+}
+.event_box_tab{
+    height: 60px;
+    width: 100%;
+    background-color: grey;
+    align-content: center;
+    padding-left: 10px;
+    border-left: grey;
+    border-top: grey;
+    border-bottom: grey;
+    border-right: white;
+    border-style : solid;
+    border-radius: 5%;
+    margin-top: 15px;
+    cursor: pointer;
+    color: white;
+    margin-left: 1px;
+
+
+}
+
+.active{
+    height: 65px;
+}
+.event_box_tab_wrapper{
+    position: relative;
+    top: -60px;
+    left: 12px;
+}
+.event_date_tab{
+    position: relative;
+}
+.height_max{
+    height: 440px;
+}
+#reg_tab{
+    bottom: -27px;
+    left: 0px;
+}
+#login_tab{
+    bottom: -27px;
+    right: 0px;
+}
+#reg_wrapper{
+    z-index: 0;
+}
+#reg_wrapper{
+    z-index: -1;
+}
+#event_date{
+    z-index:1;
+}
+#event_info{
+    z-index: auto;
+}
+.nav{
+    color: white;
+    background-color: rgb(143, 138, 138);
+
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-links{
+    display: flex;
+    color: white;
+    list-style-type: none;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px;
+}
+.nav-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+li{
+    margin: 0px 10px;
+}
+.btn{
+    background-color: cyan;
+    color: white;
+    box-shadow: 3px 3px black;
+    border-style: solid 3px black;
+    height: 25px;
+    width: 80px;
+}
+.nav a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+

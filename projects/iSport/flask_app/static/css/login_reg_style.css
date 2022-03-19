@@ -1,0 +1,94 @@
+.red_border{
+    border-style: solid;
+    color: red;
+}
+.green_border{
+    border-style: solid;
+    color: rgb(0, 255, 55);
+}
+*{
+    font-family: 'Roboto', sans-serif;
+}
+.background_grey{
+    background-color: rgb(237, 237, 238)
+}
+/* .temp{
+    height: 500px;
+    width: 400px;
+} */
+.tab{
+    height:40px;
+    width: 100px;
+    left: -90px;
+    top: 60px;
+}
+#event_info_tab{
+    height:40px;
+    width: 100px;
+    left: -90px;
+    top: 120px;
+}
+.height_max{
+    height: 440px;
+}
+#reg_tab{
+    bottom: -27px;
+    left: 0px;
+}
+#login_tab{
+    bottom: -25px;
+    right: 0px;
+}
+#reg_wrapper{
+    z-index: 0;
+}
+#reg_wrapper{
+    z-index: 1;
+}
+#event_date{
+    z-index:1;
+}
+#event_info{
+    z-index: auto;
+}
+.nav{
+    color: white;
+    background-color: rgb(143, 138, 138);
+
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-links{
+    display: flex;
+    color: white;
+    list-style-type: none;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px;
+}
+.nav-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+li{
+    margin: 0px 10px;
+}
+.btn{
+    background-color: cyan;
+    color: white;
+    box-shadow: 3px 3px black;
+    border-style: solid 3px black;
+    height: 25px;
+    width: 80px;
+}
+.nav a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
