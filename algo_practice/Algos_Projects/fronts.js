@@ -13,7 +13,6 @@ class SLL {
         let new_node = new Node(val);
         new_node.next = this.head // connects the new node to the list 
         this.head = new_node // Move the head of the list to this noce
-        console.log(this)
         return this.head
         }
     remove_front() {
@@ -23,7 +22,6 @@ class SLL {
         var removedNode = this.head;
         this.head = removedNode.next;
         removedNode.next = null;
-        console.log(this.head)
         return this.head
     }
     return_front(){
@@ -35,6 +33,21 @@ class SLL {
             return this.head.value;
         }
     }
+    display(){
+        let results = ""
+        if (this.head == null){
+            return "Empty List";
+        }
+        results += this.head.data
+        let runner = this.head.next
+        while (runner !== null){
+            results = results + ", " + runner.data
+            runner = runner.next
+        }
+        console.log(results)
+        return results
+
+    }
     } 
     
 var my_list = new SLL
@@ -44,4 +57,5 @@ my_list.addFront(5)
 my_list.addFront(2)
 my_list.addFront(7)
 my_list.remove_front()
-my_list.return_front()
+// my_list.return_front()
+my_list.display()
