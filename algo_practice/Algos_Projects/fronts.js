@@ -1,6 +1,6 @@
 class Node {
     constructor(data) {
-        this.data = data;
+        this.value = data;
         this.next = null;              
     }
 }
@@ -38,10 +38,10 @@ class SLL {
         if (this.head == null){
             return "Empty List";
         }
-        results += this.head.data
+        results += this.head.value
         let runner = this.head.next
         while (runner !== null){
-            results = results + ", " + runner.data
+            results = results + ", " + runner.value
             runner = runner.next
         }
         console.log(results)
@@ -57,5 +57,5 @@ my_list.addFront(5)
 my_list.addFront(2)
 my_list.addFront(7)
 my_list.remove_front()
-// my_list.return_front()
+my_list.return_front()
 my_list.display()
